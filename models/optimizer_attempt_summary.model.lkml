@@ -10,4 +10,6 @@ datagroup: optimizer_attempt_summary_default_datagroup {
 
 persist_with: optimizer_attempt_summary_default_datagroup
 
-explore: jupiter_optimizer_attempt_summary {}
+explore: jupiter_optimizer_attempt_summary {
+  label: "Optimizer Attempt Summary"
+}
