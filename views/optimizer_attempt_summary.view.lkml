@@ -25,22 +25,24 @@ view: jupiter_optimizer_attempt_summary {
 
 ################################ Trip Information ################################
 
-  dimension: stops                  { type: number group_label: "3.Itineraries" sql: ${TABLE}.stops ;;}
-  dimension: destination_airport    { type: string group_label: "3.Itineraries" sql: ${TABLE}.destination_airport ;;}
-  dimension: destination_country    { type: string group_label: "3.Itineraries" sql: ${TABLE}.destination_country ;;}
-  dimension: duration_days          { type: number group_label: "3.Itineraries" sql: ${TABLE}.duration_days ;;}
-  dimension: lead_days              { type: number group_label: "3.Itineraries" sql: ${TABLE}.lead_days ;;}
-  dimension: origin_airport         { type: string group_label: "3.Itineraries" sql: ${TABLE}.origin_airport ;;}
-  dimension: origin_country         { type: string group_label: "3.Itineraries" sql: ${TABLE}.origin_country ;;}
-  dimension: routing                { type: string group_label: "3.Itineraries" sql: ${TABLE}.routing ;;}
-  dimension: trip_type              { type: string group_label: "3.Itineraries" sql: ${TABLE}.trip_type ;;}
+  dimension: stops                  { type: number group_label: "3.Trip Details" sql: ${TABLE}.stops ;;}
+  dimension: destination_airport    { type: string group_label: "3.Trip Details" sql: ${TABLE}.destination_airport ;;}
+  dimension: destination_country    { type: string group_label: "3.Trip Details" sql: ${TABLE}.destination_country ;;}
+  dimension: duration_days          { type: number group_label: "3.Trip Details" sql: ${TABLE}.duration_days ;;}
+  dimension: lead_days              { type: number group_label: "3.Trip Details" sql: ${TABLE}.lead_days ;;}
+  dimension: origin_airport         { type: string group_label: "3.Trip Details" sql: ${TABLE}.origin_airport ;;}
+  dimension: origin_country         { type: string group_label: "3.Trip Details" sql: ${TABLE}.origin_country ;;}
+  dimension: routing                { type: string group_label: "3.Trip Details" sql: ${TABLE}.routing ;;}
+  dimension: trip_type              { type: string group_label: "3.Trip Details" sql: ${TABLE}.trip_type ;;}
+  dimension: adults                 { type: number group_label: "3.Trip Details" sql: ${TABLE}.adults ;;}
+  dimension: children               { type: number group_label: "3.Trip Details" sql: ${TABLE}.children ;;}
+  dimension: infants                { type: number group_label: "3.Trip Details" sql: ${TABLE}.infants ;;}
+  dimension: seats                  { type: number group_label: "3.Trip Details" sql: ${TABLE}.seats ;;}
 
-################################ Passengers ################################
+################################ Best Fare ################################
 
-  dimension: adults     { type: number group_label: "4.Passengers" sql: ${TABLE}.adults ;;}
-  dimension: children   { type: number group_label: "4.Passengers" sql: ${TABLE}.children ;;}
-  dimension: infants    { type: number group_label: "4.Passengers" sql: ${TABLE}.infants ;;}
-  dimension: seats      { type: number group_label: "4.Passengers" sql: ${TABLE}.seats ;;}
+  dimension: best_candidate   { type: number group_label: "4.Best Fare" sql: ${TABLE}.best ;;}
+  dimension: best_revenue     { type: string group_label: "4.Best Fare" sql: ${TABLE}.best_revenue ;;}
 
 ################################ Original Fare ################################
 
@@ -53,21 +55,17 @@ view: jupiter_optimizer_attempt_summary {
   dimension: original_revenue               { type: string group_label: "5.Original Fare" sql: ${TABLE}.original_revenue ;;}
   dimension: original_validating_carrier    { type: string group_label: "5.Original Fare" sql: ${TABLE}.original_validating_carrier ;;}
 
-################################ Best Fare ################################
+################################ Admissible Information ################################
 
-  dimension: best                                 { type: number group_label: "6.Best Fare" sql: ${TABLE}.best ;;}
-  dimension: best_admissible                      { type: number group_label: "6.Best Fare" sql: ${TABLE}.best_admissible ;;}
-  dimension: best_admissible_diff                 { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_diff ;;}
-  dimension: best_admissible_fare_type            { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_fare_type ;;}
-  dimension: best_admissible_gds                  { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_gds ;;}
-  dimension: best_admissible_gds_account_id       { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_gds_account_id ;;}
-  dimension: best_admissible_gds_currency         { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_gds_currency ;;}
-  dimension: best_admissible_reprice_type         { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_reprice_type ;;}
-  dimension: best_admissible_revenue              { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_revenue ;;}
-  dimension: best_admissible_validating_carrier   { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_admissible_validating_carrier ;;}
-  dimension: best_promoted                        { type: number group_label: "6.Best Fare" sql: ${TABLE}.best_promoted ;;}
-  dimension: best_promoted_revenue                { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_promoted_revenue ;;}
-  dimension: best_revenue                         { type: string group_label: "6.Best Fare" sql: ${TABLE}.best_revenue ;;}
+  dimension: best_admissible_candidate            { type: number group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible ;;}
+  dimension: best_admissible_diff                 { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_diff ;;}
+  dimension: best_admissible_fare_type            { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_fare_type ;;}
+  dimension: best_admissible_gds                  { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_gds ;;}
+  dimension: best_admissible_gds_account_id       { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_gds_account_id ;;}
+  dimension: best_admissible_gds_currency         { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_gds_currency ;;}
+  dimension: best_admissible_reprice_type         { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_reprice_type ;;}
+  dimension: best_admissible_revenue              { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_revenue ;;}
+  dimension: best_admissible_validating_carrier   { type: string group_label: "6.Admissible Fare" sql: ${TABLE}.best_admissible_validating_carrier ;;}
 
 ################################ Booked Fare ################################
 
@@ -95,6 +93,9 @@ view: jupiter_optimizer_attempt_summary {
   dimension: promoted_attemptable         { type: number group_label: "9.Promoted" sql: ${TABLE}.promoted_attemptable ;;}
   dimension: promoted_booked_next_diff    { type: string group_label: "9.Promoted" sql: ${TABLE}.promoted_booked_next_diff ;;}
   dimension: promoted_booked_revenue      { type: string group_label: "9.Promoted" sql: ${TABLE}.promoted_booked_revenue ;;}
+  dimension: best_promoted                { type: number group_label: "9.Promoted" sql: ${TABLE}.best_promoted ;;}
+  dimension: best_promoted_revenue        { type: string group_label: "9.Promoted" sql: ${TABLE}.best_promoted_revenue ;;}
+
 
 ################################ Measures ################################
 
