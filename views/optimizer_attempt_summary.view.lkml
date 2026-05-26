@@ -1,4 +1,6 @@
 view: jupiter_optimizer_attempt_summary {
+    label: "Optimizer Attempt Summary"
+
   sql_table_name: jupiter.jupiter_optimizer_attempt_summary ;;
   drill_fields: [id]
 
