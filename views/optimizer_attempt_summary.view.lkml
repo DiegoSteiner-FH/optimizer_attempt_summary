@@ -7,6 +7,7 @@ view: jupiter_optimizer_attempt_summary {
   dimension: id {
     primary_key: yes
     type: number
+    label: "Attempt Id"
     sql: ${TABLE}."id" ;;
   }
   dimension: adults {
