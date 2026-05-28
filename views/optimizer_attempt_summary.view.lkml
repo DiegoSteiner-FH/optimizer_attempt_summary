@@ -6,7 +6,7 @@ view: jupiter_optimizer_attempt_summary {
 
 ################################ Date ################################
 
-  dimension_group: created                        { type: time   group_label: "1.Date" timeframes: [raw, time, date, week, month, quarter, year] sql: ${TABLE}.created_at ;;}
+  dimension_group: created                        { type: time   group_label: "1.Date" timeframes: [raw, time, date, day_of_week, week, month, quarter, year] sql: ${TABLE}.created_at ;;}
 
 ################################ Tracking ################################
 
