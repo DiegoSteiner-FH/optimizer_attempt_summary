@@ -95,6 +95,9 @@ view: jupiter_optimizer_attempt_summary {
   dimension: promoted_booked_revenue              { type: number group_label: "9.Promoted" sql: ${TABLE}.promoted_booked_revenue ;;}
   dimension: best_promoted_candidate              { type: string group_label: "9.Promoted" sql: ${TABLE}.best_promoted ;;}
   dimension: best_promoted_revenue                { type: number group_label: "9.Promoted" sql: ${TABLE}.best_promoted_revenue ;;}
+  dimension: Promoted_Bookings                    { type: yesno  group_label: "9.Promoted" sql: has(${TABLE}.labels, 'BookedPromoted') ;;}
+  dimension: SavedByTheBell                       { type: yesno  group_label: "9.Promoted" sql: has(${TABLE}.labels, 'SavedByTheBell') ;;}
+  dimension: Outperforms_Next                     { type: yesno  group_label: "9.Promoted" sql: has(${TABLE}.labels, 'OutperformsNext') ;;}
 
 
 ################################ Measures ################################
